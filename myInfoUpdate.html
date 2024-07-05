@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <style>
+        .content { 
+            background-color:rgb(247, 245, 245);
+            width:80%;
+            margin:auto;
+        }
+        .innerOuter {
+            border:1px solid lightgray;
+            width:80%;
+            margin:auto;
+            padding:5% 10%;
+            background-color:white;
+        }
+
+        .pw-btn {
+            margin:
+        }
+
+    </style>
+</head>
+<body>
+    
+    <jsp:include page="" />
+
+    <div class="content">
+        <br><br>
+        <div class="innerOuter">
+            <h2>나의 정보 수정</h2>
+            <br>
+
+            <form action="update.do" method="post">
+                <div class="form-group">
+                    <label for="userId">* ID : </label>
+                    <input type="text" class="form-control" id="userId" value="${ sessionScope.loginUser.userId }" name="userId" readonly> <br>
+
+                    <p>PassWord : </p>
+                    <div class = "Pw-btn" ><button type="button" class="btn btn-danger" >비밀번호 변경하기</button></div>
+
+                    <label for="userName">* Name : </label>
+                    <input type="text" class="form-control" id="userName" value="${ sessionScope.loginUser.userName}" name="userName" required> <br>
+
+                    <label for="email"> &nbsp; Email : </label>
+                    <input type="text" class="form-control" id="email" value="${ sessionScope.loginUser.email}" name="email"> <br>
+
+                    <label for="phone"> &nbsp; Phone : </label>
+                    <input type="tel" class="form-control" id="phone" value="${ sessionScope.loginUser.phone}" name="phone"> <br>
+                    
+                    <label for="address"> &nbsp; Address : </label>
+                    <input type="text" class="form-control" id="address" value="${ sessionScope.loginUser.address}" name="address"> <br>
+                    
+                    <label for="pre_genre1"> &nbsp; Prefer-genre 1 : </label>
+                    <input type= "range" class="form-control" id= "pre_genre1" value="${ sessionScope.loginUser.pre_genre1}" name="pre_genre1"> <br>
+
+                    <label for="pre_genre2"> &nbsp; Prefer-genre 2 : </label>
+                    <input type= "range" class="form-control" id= "pre_genre1" value="${ sessionScope.loginUser.pre_genre2}" name="pre_genre2"> <br>
+                <br>
+                <div class="btns" align="center">
+                    <button type="submit" class="btn btn-primary">수정하기</button>
+                    <button type="button" class="btn btn-danger" >취소</button>
+                </div>
+            </form>
+        </div>
+        <br><br>
+        
+    </div>
+
+
+</body>
+</html>
